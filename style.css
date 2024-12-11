@@ -1,0 +1,28 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
+}
+
+.sidebar {
+    display: grid;
+    gap: 15px;
+    background-color: aqua;
+}
+
+.sidebar .sidebar-item {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.sidebar .sidebar-top {
+    
+}
+
+.main-content {
+    background-color: black;
+}
+
+.header {
+    background-color: white;
+}
