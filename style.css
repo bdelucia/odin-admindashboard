@@ -22,6 +22,12 @@ button {
     background-color: cyan;
     padding-left: 20px;
     padding-right: 20px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+button:hover, input:hover, input:active {
+    border: 2px solid cyan;
+    color: black;
 }
 
 input {
@@ -146,9 +152,8 @@ input {
 .right-content .project-description {
     font-weight: 300;
     overflow: hidden;
-    text-overflow: ellipsis; /* Add ellipsis if content is truncated */
-    white-space: normal; /* Allow text to wrap */
-    flex-grow: 1; /* Let description shrink or grow as needed */
+    text-overflow: ellipsis; 
+    white-space: normal; 
 }
 
 .right-content .project-cell {
