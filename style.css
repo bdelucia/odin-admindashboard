@@ -39,6 +39,7 @@ input {
 .sidebar {
     display: grid;
     grid-template-rows: auto;
+    min-width: 100%;
     padding: 10px;
     overflow: auto;
 
