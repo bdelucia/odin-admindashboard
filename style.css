@@ -120,7 +120,7 @@ input {
     background-color: var(--secondary-color);
 }
 
-.sidebar .sidebar-item {
+.sidebar-item {
     display: grid;
     align-items: center;
     gap: 1rem;
@@ -133,6 +133,12 @@ input {
     white-space: normal; 
     text-overflow: ellipsis;
     color: rgb(36, 36, 56);
+}
+
+.sidebar-item:hover {
+    background-color: white;
+    border-radius: 16px;
+    cursor: pointer;
 }
 /* */
 
