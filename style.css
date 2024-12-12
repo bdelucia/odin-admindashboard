@@ -1,3 +1,18 @@
+/* THEMES */
+/* Default dark theme */
+:root {
+    --primary-color: rgb(36, 36, 56);
+    --secondary-color: #00FFFF;
+    --text-color: #F6F5F4;
+}
+
+.light-theme {
+    --primary-color: #F6F5F4;
+    --text-color: rgb(36, 36, 56);
+}
+/* */
+
+/* ELEMENT/GENERAL STYLING */
 * {
     box-sizing: border-box;
 }
@@ -8,8 +23,14 @@ body, html {
     margin: 0;
     height: 100%;
     font-family: 'Inter';
+    color: var(--text-color);
 }
 
+html {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
 
 button, input {
     border-radius: 16px;
@@ -19,29 +40,72 @@ button, input {
 }
 
 button {
-    background-color: cyan;
+    background-color: var(--secondary-color);
     padding-left: 20px;
     padding-right: 20px;
-    color: rgba(0, 0, 0, 0.5);
+    color: rgb(36, 36, 56);
 }
 
 button:hover, input:hover, input:active {
-    border: 2px solid cyan;
-    color: black;
+    border: 2px solid var(--secondary-color);
+    color: var(--text-color)
 }
 
 input {
-    background-color: lightgrey;
+    background-color: var(--primary-color);
     min-width: 150px;
     padding-left: 4px;
+    color: var(--text-color);
 }
 
+.announcement-title, .your-projects {
+    justify-self: center;
+    padding-top: 10px;
+}
+/* */
+
+
+
+/* PICTURE/ICON STYLING */
+.search-icon, .notifications, .profile-pic, .top-right-name, .big-profile-pic {
+    display: grid;
+    justify-content: center;
+}
+
+.search-icon {
+    height: 30%;
+    width: auto;
+    justify-self: center;
+}
+
+.theme-switcher {
+    height: 40%;
+    width: auto;
+    justify-self: center;
+}
+
+.profile-pic, .big-profile-pic {
+    height: 100%;
+    border-radius: 50%;
+    width: auto;
+    justify-self: center;
+    padding: 10px;
+}
+/* */
+
+
+
+/* LAYOUT STYLING */
 .container {
     display: grid;
     height: 100vh;
     grid-template-columns: 10% 90%;
 }
+/* */
 
+
+
+/* SIDEBAR (.container's first column)*/
 .sidebar {
     display: grid;
     grid-template-rows: auto;
@@ -49,7 +113,7 @@ input {
     padding: 10px;
     overflow: auto;
 
-    background-color: aqua;
+    background-color: var(--secondary-color);
 }
 
 .sidebar .sidebar-item {
@@ -64,51 +128,37 @@ input {
     word-wrap: break-word; 
     white-space: normal; 
     text-overflow: ellipsis;
+    color: var(--primary-color);
 }
+/* */
 
 
+
+/* RIGHT (.container's 2nd column) */
 .right {
     display: grid;
-    grid-template-rows: 20vh 80vh;
+    grid-template-rows: 20vh 80vh; /* Header takes up 20% of the view height, .right-content the other 80% */
 }
 
-.right .right-content {
+/* The stuff below the header */
+.right-content {
     display: grid;
-    background-color: lightgrey;
+    background-color: var(--primary-color);
 }
 
+/* */
+
+
+
+/* HEADER (1st row of .right) */
 .header {
     display: grid;
     align-items: center;
     grid-template-columns: 10% 8fr 1fr 5% 2fr;
     grid-template-rows: 40% 60%;
     
-    background-color: white;
-}
-
-.header .search-icon, .notifications, .profile-pic, .top-right-name, .big-profile-pic {
-    display: grid;
-    justify-content: center;
-}
-
-.search-icon {
-    height: 30%;
-    width: auto;
-    justify-self: center;
-}
-
-.notifications {
-    height: 30%;
-    width: auto;
-    justify-self: center;
-}
-
-.profile-pic, .big-profile-pic {
-    height: 100%;
-    border-radius: 50%;
-    width: auto;
-    justify-self: center;
-    padding: 10px;
+    color: var(--primary-color);
+    background-color: var(--text-color);
 }
 
 .greeting {
@@ -119,12 +169,12 @@ input {
     font-size: 2rem;
 }
 
-.header .top-right-name {
+.top-right-name {
     font-size: 1rem;
     white-space: nowrap;
 }
 
-.header .threebuttons {
+.threebuttons {
     justify-content: center;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -132,34 +182,34 @@ input {
     overflow: visible;
     gap: 20px;
 }
+/**/
 
+
+
+/* RIGHT-CONTENT (2nd row of .right) */
 .right-content {
     display: grid;
     grid-template-rows: auto 1fr;
-    grid-template-columns: 70% 30%;
-
-    
-    height: 100%;
+    grid-template-columns: 70% 30%; /* .projects-container takes up 70% of .right, .rightright the other 30% */
 
     font-weight: 500;
-    font-size: 1rem;
 }
 
-.right-content .project-name {
+.project-name {
     font-weight: bold;
 }
 
-.right-content .project-description {
+.project-description {
     font-weight: 300;
     overflow: hidden;
     text-overflow: ellipsis; 
     white-space: normal; 
 }
 
-.right-content .project-cell {
-    background-color: white;
+.project-cell {
+    background-color: var(--primary-color);
     border-radius: 8px;
-    border: 1px solid lightgray;
+    border: 1px solid var(--secondary-color);
     padding: 50px;
     max-height: 100%;
     max-width: 100%;
@@ -167,7 +217,7 @@ input {
     height: auto; 
 }
 
-.right-content .project-container {
+.project-container {
     display: grid;
     
     grid-template-columns: 1fr 1fr;
@@ -178,8 +228,10 @@ input {
     height: 100%;
 
     overflow: hidden;
-    background-color: lightgray;
+    background-color: var(--primary-color);
 }
+
+/* ANNOUNCEMENTS/TRENDING/.RIGHTRIGHT */
 
 .rightright {
     display: grid;
@@ -194,14 +246,14 @@ input {
     gap: 5px;
     padding-top: 10px;
     padding-right: 10px;
-    background-color: lightgray;
+    background-color: var(--primary-color);
 }
 
 .rightright .announcement {
     display: grid;
 
-    background-color: white;
-    border: 1px solid lightgray;
+    background-color: var(--primary-color);
+    border: 1px solid var(--secondary-color);
     border-radius: 8px;
     grid-template-rows: 15%;
     padding: 10px;
@@ -223,7 +275,7 @@ input {
     grid-template-rows: repeat(4, 1fr);
     grid-template-columns: 100%;
     height: 100%;
-    background-color: lightgray;
+    background-color: var(--primary-color);
     font-size: 1rem;
     padding-top: 5px;
     padding-bottom: 10px;
@@ -239,8 +291,8 @@ input {
     padding-top: 5px;
     padding-bottom: 5px;
 
-    background-color: white;
-    border: 1px solid lightgray;
+    background-color: var(--primary-color);
+    border: 1px solid var(--secondary-color);
     border-radius: 8px;
 }
 
@@ -253,12 +305,9 @@ input {
     border-radius: 50%;
 }
 
-.announcement-title, .your-projects {
-    justify-self: center;
-    padding-top: 10px;
-}
-
 .trending-text {
     margin-top: 5px;
     justify-self: center;
 }
+
+/* */
