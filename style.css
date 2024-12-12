@@ -128,7 +128,7 @@ input {
     word-wrap: break-word; 
     white-space: normal; 
     text-overflow: ellipsis;
-    color: var(--primary-color);
+    color: rgb(36, 36, 56);
 }
 /* */
 
